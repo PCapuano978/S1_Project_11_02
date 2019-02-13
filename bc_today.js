@@ -14,17 +14,23 @@
 
 */
 
-// Declaring variable that is containing of the current date.
+// Declaring variable that is to be the date of October 12th, 2018.
 var thisDate = new Date();
 
 // Introducing the date string variable to contain the text of "thisDate" through local conventions.
 var dateString = thisDate.toLocaleString();
 
 // Now declaring the "dateHTML" varaible with the following text string.
-var thisDay = "<h2>" + dateString + "</h2>";
+var dateHTML = "<h2>" + dateString + "</h2>";
 
 // Now creating the thisDay variable that contains the day of the week from the "thisDate" variable.
 var thisDay = thisDate.getDay();
+
+// Using "thisDay" as a parameter value to call eventHTML, the code's result is stored.
+var eventHTML = getEvent(thisDay);
+
+// Inserting in the value of dateHTML plus the value of eventHTML before the end of elements with the "unionToday" element. 
+document.getElementById("unionToday").insertAdjacentHTML('beforeend', dateHTML + eventHTML);
 
 
 function getEvent(day) {
